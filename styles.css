@@ -1,1 +1,25 @@
+body {
+    background: linear-gradient(hsl(30, 100%, 95%), hsl(20, 90%, 80%));
+}
 
+ul {
+    list-style-type: square;
+}
+
+li {
+    font-size: .9em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    border: thick double hsl(0, 100%, 50%);
+    outline: .1em solid hsl(0, 100%, 50%);
+    width: 280px;
+}
+
+footer p {
+    font-size: .7em;
+}
