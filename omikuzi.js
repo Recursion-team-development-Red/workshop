@@ -162,6 +162,8 @@ function makeOmikuziResult(){
     return outputList;
 }
 
+const omikuzi = makeOmikuziResult();
+
 function getRandom( min, max ) {
     var random = Math.floor( Math.random() * (max + 1 - min) ) + min;
     return random;
