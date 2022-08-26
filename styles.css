@@ -1,6 +1,8 @@
 body{
     height: 100vh;
+    width: 100vw;
     background-image: linear-gradient(white, orange);
+    font-family: 'Yusei Magic', sans-serif;
 }
 
 ul {
@@ -15,10 +17,36 @@ a {
     text-decoration: none;
 }
 
+button {
+    padding-bottom: .5rem !important;
+}
+
+.container {
+    margin: auto;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;  
+    -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {  
+    display: none;
+}
+
 .box {
     border: thick double hsl(0, 100%, 50%);
     outline: .1em solid hsl(0, 100%, 50%);
     width: 280px;
+}
+
+.block {
+    border-bottom: solid 1px hsl(0, 100%, 85%);
+    box-shadow: 0 1px hsl(0, 0%, 70%);
+    width: 95%;
+}
+
+.result {
+    font-size: 4em;
 }
 
 footer p {

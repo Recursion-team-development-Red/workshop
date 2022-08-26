@@ -11,9 +11,9 @@ const aboutHtml = {
 const developersHtml = {
     title:"開発者一覧",
     list:[
-        `<a href="https://twitter.com/shinjirokoiz" target="blank">Naoto3</a>`,
-        `<a href="https://twitter.com/gretathunberg" target="blank">riku</a>`,
-        `<a href="https://twitter.com/SeikinTV" target="blank">Jy(yamada)</a>`,
+        `Naoto3`,
+        `riku`,
+        `Jy(yamada)`,
     ]
 }
 

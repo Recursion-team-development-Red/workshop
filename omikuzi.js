@@ -61,3 +61,63 @@ const omikuziList = {
 
     ],
 }
+
+config = {
+    topPage: document.getElementById("toppage"),
+    omikuzi: document.getElementById("omikuzi"),
+}
+
+// テストケース
+array = {
+    images:'https://acha0203.github.io/SW_Dev_Omikuji/images/kaji_kagamu_woman.png',
+    result:"吉",
+    advice:'GitHub Sponsors を通じて太っ腹なスポンサーがつきます。これであなたの OSS 開発は安泰です!!',
+    language:'JavaScript',
+    db:'MySQL',
+    editor:'Visual Studio Code',
+}
+
+// 「おみくじを引く」ボタンにイベント追加
+config.topPage.querySelector("button").addEventListener("click", () => {
+    const omikuzi = 
+    createOmikuzi(omikuzi);
+});
+
+// おみくじ結果表示
+function createOmikuzi(array) {
+    config.topPage.classList.add("d-none");
+    config.omikuzi.innerHTML = `
+        <div class="vh-100 d-flex align-items-center">
+            <div class="container d-flex flex-column justify-content-start align-items-center text-danger">
+                <div class="box bg-white mb-3 d-flex flex-column align-items-center py-3 my-4">
+                    <div class="block text-center px-3 mb-4"><h5 class="pb-2">ソフトウェア開発みくじ</h5></div>
+                    <div class="block text-center mb-4">
+                        <div><img class="img-fluid" src="${array.images}"></div>
+                        <div><p class="result mb-0">${array.result}</p></div>
+                    </div>
+                    <div class="block px-3 mb-4 mx-auto">
+                        <p class="fs-2">${array.advice}</p>
+                    </div>
+                    <div class="block text-center px-3 mb-4">
+                        <p>✿ ラッキー言語 ✿</p>
+                        <p>${array.language}</p>
+                    </div>
+                    <div class="block text-center px-3 mb-4">
+                        <p>✿ ラッキーデータベース ✿</p>
+                        <p>${array.db}</p>
+                    </div>
+                    <div class="text-center px-3 mb-2">
+                        <p>✿ ラッキーエディタ ✿</p>
+                        <p>${array.editor}</p>
+                    </div>
+                    <button class="btn btn-danger rounded-pill">もう一度おみくじを引く</button>
+                </div>
+            </div>
+        </div>
+    `;
+    // 「もう一度おみくじを引く」ボタンにイベント追加
+    config.omikuzi.querySelector("button").addEventListener("click", () => {
+        config.omikuzi.innerHTML = "";
+        config.topPage.classList.remove("d-none");
+    });
+}
