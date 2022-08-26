@@ -68,7 +68,7 @@ config = {
 }
 
 // テストケース
-array = {
+omikuzi = {
     images:'https://acha0203.github.io/SW_Dev_Omikuji/images/kaji_kagamu_woman.png',
     result:"吉",
     advice:'GitHub Sponsors を通じて太っ腹なスポンサーがつきます。これであなたの OSS 開発は安泰です!!',
@@ -79,7 +79,7 @@ array = {
 
 // 「おみくじを引く」ボタンにイベント追加
 config.topPage.querySelector("button").addEventListener("click", () => {
-    const omikuzi = 
+    // const omikuzi = 
     createOmikuzi(omikuzi);
 });
 
@@ -100,15 +100,15 @@ function createOmikuzi(array) {
                     </div>
                     <div class="block text-center px-3 mb-4">
                         <p>✿ ラッキー言語 ✿</p>
-                        <p>${array.language}</p>
+                        <p class="lucky-p">${array.language}</p>
                     </div>
                     <div class="block text-center px-3 mb-4">
                         <p>✿ ラッキーデータベース ✿</p>
-                        <p>${array.db}</p>
+                        <p class="lucky-p">${array.db}</p>
                     </div>
                     <div class="text-center px-3 mb-2">
                         <p>✿ ラッキーエディタ ✿</p>
-                        <p>${array.editor}</p>
+                        <p class="lucky-p">${array.editor}</p>
                     </div>
                     <button class="btn btn-danger rounded-pill">もう一度おみくじを引く</button>
                 </div>
