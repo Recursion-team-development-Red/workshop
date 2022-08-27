@@ -7,7 +7,7 @@ const aboutHtml = {
         `「チーム開発体験会」が催される度におみくじの種類が増えてゆきますので、納得しかねるおみくじを引いてしまっても懲りずにまた引きに来るのが吉です。`,
     ]
 }
-// "developer.html" の内容
+// "developers.html" の内容
 const developersHtml = {
     title:"開発者一覧",
     list:[
@@ -33,12 +33,11 @@ function createOtherPages () {
     `;
 }
 // "about.html", "developers.html" の内容反映
-function setOtherPages (title, list) {
+function setOtherPages (dic) {
     createOtherPages();
-    document.querySelector("title").innerHTML = title;
-    document.querySelector("h4").innerHTML = title;
+    document.querySelector("h4").innerHTML = dic.title;
     const ul = document.querySelector("ul");
-    for(const e of list){
+    for(const e of dic.list){
         const li = document.createElement("li");
         li.classList.add("mb-2");
         li.innerHTML = e;
@@ -52,9 +51,7 @@ const url = window.location.pathname.split('/').pop();
 // 場合分けで"index.html" 以外のページを作成
 switch (url) {
     case "about.html":
-        setOtherPages(aboutHtml.title, aboutHtml.list);
-        break;
+        setOtherPages(aboutHtml); break;
     case "developers.html":
-        setOtherPages(developersHtml.title, developersHtml.list);
-        break;
+        setOtherPages(developersHtml); break;
 }
