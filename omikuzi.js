@@ -188,8 +188,8 @@ function createOmikuzi(array) {
                 <div class="box bg-white mb-3 d-flex flex-column align-items-center py-3 my-4">
                     <div class="block text-center px-3 mb-4"><h5 class="pb-2">ソフトウェア開発みくじ</h5></div>
                     <div class="block text-center mb-4">
-                        <div><img class="img-fluid" src="${array.images}"></div>
-                        <div><p class="result mb-0">${array.result}</p></div>
+                        <div><img class="img-fluid" src="images/${array.images}"></div>
+                        <div><h1 class="result">${array.result}</h1></div>
                     </div>
                     <div class="block px-3 mb-4 mx-auto">
                         <p class="fs-2">${array.advice}</p>
