@@ -44,8 +44,11 @@ div3.classList.add("d-flex","flex-column");
 backGroundDiv.append(div3);
 
 let info = document.createElement("div");
-info.classList.add("text-danger","yuji-syuku","middle-fon");
-info.innerHTML = "このおみくじについて｜開発者一覧";
+info.classList.add("text-danger");
+info.innerHTML = `
+    <a class="text-danger" href="about.html">このおみくじについて</a>
+    ｜
+    <a class="text-danger" href="developers.html">開発者一覧</a>`;
 div3.append(info);
 
 let div4 = document.createElement("div");
@@ -53,8 +56,8 @@ div4.classList.add("text-center");
 backGroundDiv.append(div4)
 
 let info2 = document.createElement("div");
-info2.classList.add("text-danger","small-font")
-info2.innerHTML = "＠ソフトウェア開発みくじ";
+info2.classList.add("text-danger")
+info2.innerHTML = "🄫ソフトウェア開発みくじ";
 div4.append(info2);
 
 

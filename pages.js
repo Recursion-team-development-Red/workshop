@@ -22,12 +22,12 @@ function createOtherPages () {
     document.querySelector("body").innerHTML = `
     <div class="vw-100 vh-100 d-flex flex-column justify-content-center align-items-center text-danger">
         <div class="box bg-white mb-3 d-flex flex-column align-items-center p-3">
-            <h5 class="mb-3"></h5>
+            <h4 class="mb-3"></h4>
             <ul class="mb-2"></ul>
         </div>
         <a href="index.html" class="mb-3"><button class="btn btn-danger rounded-pill">戻る</button></a>
         <footer>
-            <p>©ソフトウェア開発みくじ</p>
+            <p>🄫ソフトウェア開発みくじ</p>
         </footer>
     </div>
     `;
@@ -36,7 +36,7 @@ function createOtherPages () {
 function setOtherPages (title, list) {
     createOtherPages();
     document.querySelector("title").innerHTML = title;
-    document.querySelector("h5").innerHTML = title;
+    document.querySelector("h4").innerHTML = title;
     const ul = document.querySelector("ul");
     for(const e of list){
         const li = document.createElement("li");
