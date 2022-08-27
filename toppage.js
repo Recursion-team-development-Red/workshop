@@ -9,18 +9,36 @@ innerFlex.append(backGroundDiv);
 //タイトル
 let div = document.createElement("div");
 div.classList.add("text-center");
-backGroundDiv.append(div)
+backGroundDiv.append(div);
 
 let title = document.createElement("h1");
 title.classList.add("text-danger");
 title.innerHTML = "ソフトウェア開発";
-div.append(title);
 
 let title2 = document.createElement("h1");
 title2.classList.add("text-danger");
 title2.innerHTML = "みくじ";
-div.append(title2);
 
+const deco = document.createElement("h1");
+deco.classList.add("mx-4", "result", "deco");
+deco.innerHTML = "✿";
+
+const titleWrapper = document.createElement("div");
+titleWrapper.classList.add("d-flex", "justify-content-center", "align-items-center", "text-danger");
+titleWrapper.innerHTML = `${deco.outerHTML}
+    <div>${title.outerHTML}${title2.outerHTML}</div>
+    ${deco.outerHTML}`;
+div.append(titleWrapper);
+
+window.addEventListener("resize", ()=> {
+    const decos = document.querySelectorAll(".deco");
+    if (window.innerWidth < 550) {
+        for (const deco of decos) if (!deco.classList.contains("d-none")) deco.classList.add("d-none");
+    }
+    else {
+        for (const deco of decos) if (deco.classList.contains("d-none")) deco.classList.remove("d-none");
+    }
+});
 
 //画像
 let picture = document.createElement("img");

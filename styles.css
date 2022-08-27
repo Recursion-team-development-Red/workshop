@@ -22,6 +22,10 @@ button {
     padding-bottom: .5rem !important;
 }
 
+.light {
+    filter: drop-shadow(0 0 2em white);
+}
+
 .container {
     margin: auto;
     max-height: 100vh;
