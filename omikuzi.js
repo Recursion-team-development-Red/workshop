@@ -58,7 +58,7 @@ const omikuziList = {
         'Atom',
         'nano',
         'Visual Studio Code',
-
+        
     ],
 }
 
@@ -67,19 +67,115 @@ config = {
     omikuzi: document.getElementById("omikuzi"),
 }
 
-// テストケース
-omikuzi = {
-    images:'https://acha0203.github.io/SW_Dev_Omikuji/images/kaji_kagamu_woman.png',
-    result:"吉",
-    advice:'GitHub Sponsors を通じて太っ腹なスポンサーがつきます。これであなたの OSS 開発は安泰です!!',
-    language:'JavaScript',
-    db:'MySQL',
-    editor:'Visual Studio Code',
+function makeOmikuziResult(){
+    let randomNum1 = getRandom(0,48);
+    let result = "";
+    let advice = "";
+    let imgUrl = "";
+
+    // おみくじの結果の確率で傾斜をつけようとすると冗長なコードしか思いつきませんでした
+    if (0<= randomNum1 && randomNum1<=4){
+        result = omikuziList.result[0];
+        if (0<=randomNum1<=1){
+            advice = omikuziList.advice[0];
+            imgUrl = omikuziList.images[0];
+        }
+        else{
+            advice = omikuziList.advice[1];
+            imgUrl = omikuziList.images[1];
+        }
+    }
+    else if (4 < randomNum1 && randomNum1 <= 12){
+        result = omikuziList.result[1];
+        if (4<randomNum1<=8){
+            advice = omikuziList.advice[2];
+            imgUrl = omikuziList.images[2];
+        }
+        else{
+            advice = omikuziList.advice[3];
+            imgUrl = omikuziList.images[3];
+        }
+    }
+    else if (12 < randomNum1 && randomNum1 <= 24){
+        result = omikuziList.result[2];
+        if (12<randomNum1<=18){
+            advice = omikuziList.advice[4];
+            imgUrl = omikuziList.images[4];
+        }
+        else{
+            advice = omikuziList.advice[5];
+            imgUrl = omikuziList.images[5];
+        }
+    }
+    else if (24 < randomNum1 && randomNum1 <= 36){
+        result = omikuziList.result[3];
+        if (24<randomNum1<=30){
+            advice = omikuziList.advice[6];
+            imgUrl = omikuziList.images[6];
+        }
+        else{
+            advice = omikuziList.advice[7];
+            imgUrl = omikuziList.images[7];
+        }
+    }
+    else if (36 < randomNum1 && randomNum1 <= 44){
+        result = omikuziList.result[4];
+        if (36<randomNum1<=40){
+            advice = omikuziList.advice[8];
+            imgUrl = omikuziList.images[8];
+        }
+        else{
+            advice = omikuziList.advice[9];
+            imgUrl = omikuziList.images[9];
+        }
+    }
+    else if (44 < randomNum1 && randomNum1 <= 48){
+        result = omikuziList.result[5];
+        if (44<randomNum1<=48){
+            advice = omikuziList.advice[10];
+            imgUrl = omikuziList.images[10];
+        }
+        else{
+            advice = omikuziList.advice[11];
+            imgUrl = omikuziList.images[11];
+        }
+    }
+
+    console.log(randomNum1);
+
+    let langLength = omikuziList.language.length;
+    let dbLength = omikuziList.db.length;
+    let editorLength = omikuziList.editor.length;
+
+    let randomLangNum = getRandom(0,langLength-1);
+    let randomDbNum = getRandom(0,dbLength-1);
+    let randomEditorNum = getRandom(0,editorLength-1);
+
+    let language = omikuziList.language[randomLangNum];
+    let db = omikuziList.db[randomDbNum];
+    let editor = omikuziList.editor[randomEditorNum];
+    
+    const outputList = {
+        images :imgUrl,
+        result :result,
+        advice :advice,
+        language :language,
+        db :db,
+        editor :editor,
+    }
+    console.log(outputList.result);
+    console.log(result);
+    return outputList;
+}
+
+function getRandom( min, max ) {
+    const random = Math.floor( Math.random() * (max + 1 - min) ) + min;
+    return random;
 }
 
 // 「おみくじを引く」ボタンにイベント追加
 config.topPage.querySelector("button").addEventListener("click", () => {
-    // const omikuzi = 
+    const omikuzi = makeOmikuziResult();
     createOmikuzi(omikuzi);
 });
 
